@@ -1,8 +1,12 @@
-## Redirecting Languages
+## Redirecting unlocalized URLs
 
-Redirects all paths to `de` and `en` languages expect:
+Static hosting has some limitation like no server side language redirection for e.g. search engines. Cloudflare Workers run on the edge and are very fast when switching from cold state to hot (allegedly 5ms wake up time). This is ideally for redirections based on HTTP headers, browser settings or geolocation.
+
+This Cloudflare Worker script redirects all unlocalized paths to `de` and `en` languages expect:
 
 ```
+'de(\\/.*)?',
+'en(\\/.*)?',
 'sw.js',
 'sitemap.xml',
 'robots.txt',
@@ -10,12 +14,12 @@ Redirects all paths to `de` and `en` languages expect:
 'favicon.ico',
 '_nuxt\\/.*',
 'static\\/.*',
-'de(\\/.*)?',
-'en(\\/.*)?',
 '404.html'
 ```
 
-This is necessary as all incoming request have to go through the worker because there are no look ahead patterns like "execute this worker when there is no '/de' in the path". Also common plugins like the [next-i18next](https://github.com/isaachinman/next-i18next) do it like this which can be seen in their [code on Github](https://github.com/isaachinman/next-i18next/blob/abdf06545410f340b0529e3448f8b102ab840249/src/config/default-config.ts#L27). The second `/` in de and en paths is necessary as the code is transformed into a Regex in JS where slashes and backslashes have to be escaped.
+These exceptions are necessary as all incoming request have to go through the worker in Cloudflare. The reason for this is, that there are no look ahead patterns like _execute this worker when there is no `/de` in the path_. Also common plugins like the [next-i18next](https://github.com/isaachinman/next-i18next) do it like mentioned above which can be seen in their [code here on Github](https://github.com/isaachinman/next-i18next/blob/abdf06545410f340b0529e3448f8b102ab840249/src/config/default-config.ts#L27).
+
+The second backslash (`/`) in the definition paths is necessary because the code is transformed into a Regex in JS where slashes and backslashes have to be escaped.
 
 #### Language recognition order:
 
