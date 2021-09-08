@@ -1,21 +1,21 @@
 {
-  "name": "cloudflare-language-redirector",
-  "private": true,
-  "version": "1.0.0",
-  "description": "A Cloudflare Worker script to redirect users of a NuxtJS websites to their preferred language subpaths.",
-  "main": "index.js",
-  "scripts": {
-    "format": "prettier --write '**/*.{js,css,json,md}'",
-    "deploy": "wrangler publish"
-  },
-  "author": "Leonhard Esterbauer <leonhard.esterbauer@gmail.com>",
-  "license": "MIT",
-  "devDependencies": {
-    "@cloudflare/wrangler": "^1.19.0",
-    "prettier": "^1.17.0"
-  },
-  "dependencies": {
-    "accept-language-parser": "^1.5.0",
-    "cookie": "^0.4.1"
-  }
+    "name": "cloudflare-language-redirector",
+    "private": true,
+    "version": "1.0.0",
+    "description": "A Cloudflare Worker script to redirect users of a NuxtJS websites to their preferred language subpaths.",
+    "main": "index.js",
+    "scripts": {
+        "format": "prettier --write '**/*.{js,css,json,md}'",
+        "deploy": "wrangler publish"
+    },
+    "author": "Leonhard Esterbauer <leonhard.esterbauer@gmail.com>",
+    "license": "MIT",
+    "devDependencies": {
+        "@cloudflare/wrangler": "^1.19.0",
+        "prettier": "^1.17.0"
+    },
+    "dependencies": {
+        "accept-language-parser": "^1.5.0",
+        "cookie": "^0.4.1"
+    }
 }
