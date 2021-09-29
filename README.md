@@ -45,4 +45,4 @@ It is also possible to configure the associated domain via wrangler or the `wran
 
 ## Contact
 :octocat: [@estallio](https://github.com/estallio)\
-:email: [leonhard.esterbauer@gmal.com](mailto:leonhard.esterbauer@gmail.com)
+:email: [leonhard.esterbauer@gmail.com](mailto:leonhard.esterbauer@gmail.com)
