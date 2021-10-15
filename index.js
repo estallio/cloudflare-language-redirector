@@ -25,6 +25,7 @@ const staticPaths = [
     'sitemap.xml',
     'robots.txt',
     'icon.png',
+    'favicon-*.png',
     'favicon.ico',
     '_nuxt\\/.*',
     'static\\/.*',
