@@ -18,8 +18,6 @@ const langCookieName = 'i18n_redirected'
 
 const supportedLanguages = ['de', 'en']
 
-const defaultLanguage = 'en'
-
 const staticPaths = [
     'sw.js',
     'sitemap.xml',

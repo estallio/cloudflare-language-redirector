@@ -2,13 +2,6 @@
 # yarn lockfile v1
 
 
-"@cloudflare/kv-asset-handler@^0.1.3":
-  "integrity" "sha512-FNcunDuTmEfQTLRLtA6zz+buIXUHj1soPvSWzzQFBC+n2lsy+CGf/NIrR3SEPCmsVNQj70/Jx2lViCpq+09YpQ=="
-  "resolved" "https://registry.npmjs.org/@cloudflare/kv-asset-handler/-/kv-asset-handler-0.1.3.tgz"
-  "version" "0.1.3"
-  dependencies:
-    "mime" "^2.5.2"
-
 "@cloudflare/wrangler@^1.19.0":
   "integrity" "sha512-fbvJEzb8P/IulJus72pG/G3THDyNk+YGwl1PzuMGlJGF+yvCaNWj+NmyZERmQxfq2bDs8UTUSQTrIdYVGH1tXQ=="
   "resolved" "https://registry.npmjs.org/@cloudflare/wrangler/-/wrangler-1.19.0.tgz"
@@ -99,11 +92,6 @@
   "integrity" "sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ=="
   "resolved" "https://registry.npmjs.org/inherits/-/inherits-2.0.4.tgz"
   "version" "2.0.4"
-
-"mime@^2.5.2":
-  "integrity" "sha512-tqkh47FzKeCPD2PUiPB6pkbMzsCasjxAfC62/Wap5qrUWcb+sFasXUC5I3gYM5iBM8v/Qpn4UK0x+j0iHyFPDg=="
-  "resolved" "https://registry.npmjs.org/mime/-/mime-2.5.2.tgz"
-  "version" "2.5.2"
 
 "minimatch@^3.0.4":
   "integrity" "sha512-yJHVQEhyqPLUTgt9B83PXu6W3rx4MvvHvSUvToogpwoGDOUQ+yDrR0HRot+yOCdCO7u4hX3pWft6kWBBcqh0UA=="
