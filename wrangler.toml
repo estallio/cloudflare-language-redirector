@@ -1,4 +1,7 @@
 name = "cloudflare-language-redirector"
 type = "webpack"
-account_id = "d230982dl29i0234jf09"
 workers_dev = true
+account_id = ""
+route = ""
+zone_id = ""
+compatibility_date = "2021-10-16"
