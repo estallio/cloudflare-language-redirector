@@ -32,7 +32,7 @@ const staticPaths = [
     '404.html',
 ]
 
-const staticPathsRegex = new RegExp(`^/(${staticPaths.join('|')})(\\?.*)?$`, 'i')
+const staticPathsRegex = new RegExp(`^/(${staticPaths.join('|')})(\\?.*)?(#.*)??$`, 'i')
 
 addEventListener('fetch', event => {
     event.respondWith(handleRequest(event.request))
@@ -66,7 +66,9 @@ async function handleRequest(request) {
                     url.origin +
                     '/' +
                     cookies[langCookieName] +
-                    url.pathname
+                    url.pathname +
+                    url.search +
+                    url.hash
                 ).replace(/\/+$/, ''),
                 302
             )
@@ -87,7 +89,14 @@ async function handleRequest(request) {
     if (lang !== null) {
         // respond with the accept-language value
         return Response.redirect(
-            (url.origin + '/' + lang + url.pathname).replace(/\/+$/, ''),
+            (
+                url.origin +
+                '/' +
+                lang +
+                url.pathname +
+                url.search +
+                url.hash
+            ).replace(/\/+$/, ''),
             302
         )
     }
@@ -97,7 +106,13 @@ async function handleRequest(request) {
     ////////
     if (germanSpeakingCountries.includes(request.cf.country.toUpperCase())) {
         return Response.redirect(
-            (url.origin + '/de' + url.pathname).replace(/\/+$/, ''),
+            (
+                url.origin +
+                '/de' +
+                url.pathname +
+                url.search +
+                url.hash
+            ).replace(/\/+$/, ''),
             302
         )
     }
@@ -106,7 +121,13 @@ async function handleRequest(request) {
     // case 5: fallback to english as english is understood all over the globe
     ////////
     return Response.redirect(
-        (url.origin + '/en' + url.pathname).replace(/\/+$/, ''),
+        (
+            url.origin +
+            '/en' +
+            url.pathname +
+            url.search +
+            url.hash
+        ).replace(/\/+$/, ''),
         302
     )
 }
