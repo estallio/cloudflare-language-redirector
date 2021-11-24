@@ -5,16 +5,17 @@ Static hosting has some limitation like no server side language redirection for 
 This Cloudflare Worker script redirects all unlocalized paths to `de` and `en` languages expect:
 
 ```
-'de(\\/.*)?',
-'en(\\/.*)?',
 'sw.js',
 'sitemap.xml',
 'robots.txt',
 'icon.png',
+'favicon-*.png',
 'favicon.ico',
 '_nuxt\\/.*',
 'static\\/.*',
-'404.html'
+'de(\\/.*)?',
+'en(\\/.*)?',
+'404.html',
 ```
 
 These exceptions are necessary as all incoming request have to go through the worker in Cloudflare. The reason for this is, that there are no look ahead patterns like _execute this worker when there is no `/de` in the path_. Also common plugins like the [next-i18next](https://github.com/isaachinman/next-i18next) do it like mentioned above which can be seen in their [code here on Github](https://github.com/isaachinman/next-i18next/blob/abdf06545410f340b0529e3448f8b102ab840249/src/config/default-config.ts#L27).

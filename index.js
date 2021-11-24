@@ -32,7 +32,7 @@ const staticPaths = [
     '404.html',
 ]
 
-const staticPathsRegex = new RegExp(`^/(${staticPaths.join('|')})$`, 'i')
+const staticPathsRegex = new RegExp(`^/(${staticPaths.join('|')})(\\?.*)?$`, 'i')
 
 addEventListener('fetch', event => {
     event.respondWith(handleRequest(event.request))
