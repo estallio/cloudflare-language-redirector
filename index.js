@@ -32,7 +32,10 @@ const staticPaths = [
     '404.html',
 ]
 
-const staticPathsRegex = new RegExp(`^/(${staticPaths.join('|')})(\\?.*)?(#.*)??$`, 'i')
+// Maybe add also search and hash params like this: '...(\\?.*)?(#.*)?$', meanwhile it's included in the 'de/.*' etc...
+// Most likely no search param will ever by added to an image or the 404 page
+// Tried to implement it, but it does not work properly with redirection to /?preview to /de/?preview (should result in /de?preview)
+const staticPathsRegex = new RegExp(`^/(${staticPaths.join('|')})$`, 'i')
 
 addEventListener('fetch', event => {
     event.respondWith(handleRequest(event.request))
